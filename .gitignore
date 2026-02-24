@@ -1,0 +1,38 @@
+# 敏感配置与密钥（切勿提交）
+openclaw.json
+openclaw.json.bak
+openclaw.json.bak.*
+*.local.json
+.env
+.env.*
+!.env.example
+
+# 身份与设备（含私钥、token）
+identity/
+devices/
+credentials/
+
+# 运行时与会话（含 token、会话内容）
+agents/
+logs/
+delivery-queue/
+media/
+cron/
+update-check.json
+
+# 备份与缓存
+backup/
+*.bak
+.cache/
+
+# 工作区（含嵌套 git，不纳入本仓库）
+workspace/
+
+# 浏览器配置/用户数据
+browser/openclaw/
+
+# 通用
+node_modules/
+.DS_Store
+*.log
+Thumbs.db

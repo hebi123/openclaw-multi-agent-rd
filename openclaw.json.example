@@ -1,0 +1,64 @@
+{
+  "meta": { "lastTouchedVersion": "", "lastTouchedAt": "" },
+  "env": {
+    "FEISHU_APP_SECRET": "YOUR_FEISHU_APP_SECRET",
+    "WANJIE_API_KEY": "YOUR_WANJIE_API_KEY",
+    "WANJIE_API_KEY_2": "YOUR_WANJIE_API_KEY_2"
+  },
+  "wizard": { "lastRunAt": "", "lastRunVersion": "", "lastRunCommand": "", "lastRunMode": "local" },
+  "auth": { "profiles": {} },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "wanjie": {
+        "baseUrl": "https://maas-openapi.wanjiedata.com/api",
+        "apiKey": "${WANJIE_API_KEY}",
+        "api": "openai-completions",
+        "models": [{ "id": "claude-opus-4-5-20251101", "name": "Claude Opus 4.5", "reasoning": true, "input": ["text", "image"], "contextWindow": 200000, "maxTokens": 8192 }]
+      },
+      "wanjie2": {
+        "baseUrl": "https://maas-openapi.wanjiedata.com/api",
+        "apiKey": "${WANJIE_API_KEY_2}",
+        "api": "openai-completions",
+        "models": [{ "id": "claude-opus-4-5-20251101", "name": "Claude Opus 4.5 (万界 CC 2)", "reasoning": true, "input": ["text", "image"], "contextWindow": 200000, "maxTokens": 8192 }]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": { "primary": "wanjie/claude-opus-4-5-20251101" },
+      "models": {},
+      "compaction": { "mode": "safeguard" },
+      "maxConcurrent": 4,
+      "subagents": { "maxConcurrent": 8 },
+      "bootstrapMaxChars": 5000,
+      "bootstrapTotalMaxChars": 15000
+    }
+  },
+  "messages": { "ackReactionScope": "group-mentions" },
+  "commands": { "native": "auto", "nativeSkills": "auto" },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "appId": "YOUR_FEISHU_APP_ID",
+      "appSecret": "${FEISHU_APP_SECRET}",
+      "domain": "feishu",
+      "groupPolicy": "open",
+      "connectionMode": "websocket",
+      "streaming": false,
+      "textChunkLimit": 3000,
+      "renderMode": "raw"
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": { "mode": "token", "token": "YOUR_GATEWAY_TOKEN_OR_RUN_OPENCLAW_DOCTOR" }
+  },
+  "browser": {
+    "enabled": true,
+    "defaultProfile": "openclaw",
+    "executablePath": ""
+  },
+  "plugins": { "entries": { "feishu": { "enabled": true } } },
+  "skills": { "entries": {} }
+}
