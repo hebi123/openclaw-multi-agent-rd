@@ -1,6 +1,6 @@
-# 四角色协作 — 运行日志规范
+# 四 Agent 协作 — 运行日志规范
 
-每次四角色协作运行均需落盘一份**运行日志**，便于测试、回溯与审计。日志路径：`workspace/four-roles-core/runs/<runId>.json`。
+每次四 Agent 协作运行均需落盘一份**运行日志**，便于测试、回溯与审计。日志路径：`workspace/four-roles-core/runs/<runId>.json`。
 
 ## 日志结构（runId.json）
 
@@ -54,7 +54,7 @@
   "runId": "run_1730123456789",
   "startedAt": "2026-02-24T10:00:00.000Z",
   "endedAt": null,
-  "instruction": "按四角色流程完成 XXX 功能",
+  "instruction": "按四 Agent 流程完成 XXX 功能",
   "attachmentRefs": ["docs/prd-draft.md"],
   "acceptResult": null,
   "ended": false,

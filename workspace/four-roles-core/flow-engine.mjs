@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 四角色协作 — 流程引擎（只读流程定义与上下文，推进状态由调用方写 context.json）
+ * 四 Agent 协作 — 流程引擎（只读流程定义与上下文，推进状态由调用方写 context.json）
  * 不改变 OpenClaw 架构，仅作为共享核心的一部分，供 Agent 或脚本查询/推进。
  */
 import fs from "fs";

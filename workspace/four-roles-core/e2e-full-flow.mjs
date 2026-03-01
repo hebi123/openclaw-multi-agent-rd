@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 四角色协作 — 完整流程 E2E（可重复）
+ * 四 Agent 协作 — 完整流程 E2E（可重复）
  * 固定输入指令 → 从 demand 模拟推进到 release（验收通过）或 rollback→dev→…→未通过（验收再次不通过）。
  * 不调用真实 LLM，仅验证流程与 context 的完整推进；用于验收标准 A3「流程可完整走通」。
  */

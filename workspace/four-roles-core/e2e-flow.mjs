@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * 四角色协作 — E2E 流程测试（可重复）
+ * 四 Agent 协作 — E2E 流程测试（可重复）
  * 固定输入指令 → 初始化 context → 断言阶段与产出结构存在。
- * 不调用真实 LLM，仅验证流程引擎与 context 结构；如需真实多角色跑通，由 Agent 按 skill-four-roles 执行后对本脚本扩展断言。
+ * 不调用真实 LLM，仅验证流程引擎与 context 结构；如需真实多 Agent 跑通，由 Agent 按 skill-four-roles 执行后对本脚本扩展断言。
  */
 import fs from "fs";
 import path from "path";
@@ -18,7 +18,7 @@ function run() {
   // 1. 初始化
   const ctx = {
     runId: `e2e_${Date.now()}`,
-    instruction: "E2E 固定指令：请按四角色流程完成一次最小演示",
+    instruction: "E2E 固定指令：请按四 Agent 流程完成一次最小演示",
     attachmentRefs: [],
     phase: flow.phases[0],
     rollbackCount: 0,

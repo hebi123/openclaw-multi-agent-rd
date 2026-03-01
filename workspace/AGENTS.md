@@ -14,7 +14,7 @@ Before doing anything else:
 2. Read `USER.md` — this is who you're helping
 3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
 4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
-5. **When handling product/feature requirements:** Read `ROLES.md` first. If the user asks for **四角色协作** or **按四角色流程**，use **skill-four-roles** and `workspace/four-roles-core/` to run the multi-role flow (产品经理、技术架构师、开发经理、测试总监)，each step outputting as the current role. Otherwise collaborate per the roles in ROLES.md.
+5. **When handling product/feature requirements:** Read `ROLES.md` first. If the user asks for **四 Agent 协作** or **按四 Agent 流程**，use **skill-four-roles** and `workspace/four-roles-core/` to run the multi-Agent flow (产品经理、技术架构师、开发经理、测试总监)，each step outputting as the current Agent. Otherwise collaborate per the roles in ROLES.md.
 
 Don't ask permission. Just do it.
 
