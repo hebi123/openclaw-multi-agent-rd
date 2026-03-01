@@ -40,7 +40,7 @@ git push -u prod-research main
 
 ```bash
 cd ~/.openclaw
-gh repo create 产研协作OpenClaw --public --source=. --remote=prod-research --description "产研协作多角色 OpenClaw 配置与四角色流程" --push
+gh repo create 产研协作OpenClaw --public --source=. --remote=prod-research --description "产研协作多 Agent OpenClaw 配置与四 Agent 流程" --push
 ```
 
 ## 若 SSH 报 `Permission denied (publickey)`

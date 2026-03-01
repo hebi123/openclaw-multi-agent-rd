@@ -25,10 +25,10 @@ backup/
 *.bak
 .cache/
 
-# 工作区（含嵌套 git，不纳入本仓库；四角色共享核心除外）
+# 工作区（含嵌套 git，不纳入本仓库；四 Agent 共享核心除外）
 workspace/*
 !workspace/four-roles-core/
-# 四角色运行时上下文不提交
+# 四 Agent 运行时上下文不提交
 workspace/four-roles-core/context.json
 
 # 浏览器配置/用户数据
