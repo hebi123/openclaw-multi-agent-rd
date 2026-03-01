@@ -1,0 +1,41 @@
+{
+  "phases": [
+    "demand",
+    "design",
+    "schedule",
+    "testability",
+    "align",
+    "dev",
+    "test",
+    "accept",
+    "release",
+    "rollback"
+  ],
+  "roleByPhase": {
+    "demand": "pm",
+    "design": "architect",
+    "schedule": "dev",
+    "testability": "qa",
+    "align": "all",
+    "dev": "dev",
+    "test": "qa",
+    "accept": "pm",
+    "release": "all",
+    "rollback": "all"
+  },
+  "nextPhase": {
+    "demand": "design",
+    "design": "schedule",
+    "schedule": "testability",
+    "testability": "align",
+    "align": "dev",
+    "dev": "test",
+    "test": "accept",
+    "accept": "release_or_rollback",
+    "release": "_end_ok",
+    "rollback": "dev_or_end_fail"
+  },
+  "maxRollbackCount": 1,
+  "devTestRounds": "unbounded",
+  "architectGateAfter": ["dev", "test"]
+}

@@ -25,11 +25,28 @@ backup/
 *.bak
 .cache/
 
-# 工作区（含嵌套 git，不纳入本仓库；四 Agent 共享核心除外）
+# 工作区：先忽略全部，再放开要推送的（避免嵌套 .git 被加入）
 workspace/*
+workspace/.git/
+workspace/.openclaw/
+workspace/node_modules/
+workspace/2026-02-19-tankbattle/
+# 放开 workspace 根下 8 个文档与 3 个文件
+!workspace/ROLES.md
+!workspace/AGENTS.md
+!workspace/TOOLS.md
+!workspace/BOOTSTRAP.md
+!workspace/USER.md
+!workspace/IDENTITY.md
+!workspace/SOUL.md
+!workspace/HEARTBEAT.md
+!workspace/install-gh.sh
+!workspace/package.json
+!workspace/.gitignore
+# 放开 four-roles-core（流程/角色/文档），不推送运行时
 !workspace/four-roles-core/
-# 四 Agent 运行时上下文不提交
 workspace/four-roles-core/context.json
+workspace/four-roles-core/runs/
 
 # 浏览器配置/用户数据
 browser/openclaw/

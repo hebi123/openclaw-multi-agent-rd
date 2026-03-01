@@ -1,6 +1,6 @@
-# 将本仓库推送到 GitHub 新项目「产研协作OpenClaw」
+# 将本仓库推送到 GitHub
 
-本地已提交最新代码。
+适用于本仓库（OpenClaw 多 Agent 产研协作）推送到 GitHub 的通用步骤。当前推荐远程名为 `prod-research`，仓库示例：`openclaw-multi-agent-rd`。
 
 ## 若 HTTPS 连不上（443 超时）
 
@@ -8,9 +8,9 @@
 
 ```bash
 cd ~/.openclaw
-git remote set-url prod-research git@github.com:hebi123/产研协作OpenClaw.git
-# 若仓库名是英文：
-# git remote set-url prod-research git@github.com:hebi123/openclaw-product-research.git
+git remote set-url prod-research git@github.com:你的用户名/仓库名.git
+# 示例（仓库名为英文）：
+# git remote set-url prod-research git@github.com:hebi123/openclaw-multi-agent-rd.git
 git push -u prod-research main
 ```
 
@@ -18,19 +18,19 @@ git push -u prod-research main
 
 1. **在 GitHub 新建仓库**
    - 打开 https://github.com/new
-   - **Repository name** 填：`产研协作OpenClaw`（或英文名如 `openclaw-product-research`）
+   - **Repository name** 填英文名（如 `openclaw-multi-agent-rd`），避免中文名在 SSH 下出现「invalid repository name」。
    - 选择 **Public**，**不要**勾选 “Add a README” / “Add .gitignore”
    - 点击 **Create repository**
 
-2. **在本地添加远程并推送**（将 `你的用户名` 换成你的 GitHub 用户名）：
+2. **在本地添加远程并推送**（将 `你的用户名`、`仓库名` 换成实际值）：
    ```bash
    cd ~/.openclaw
-   git remote add prod-research https://github.com/你的用户名/产研协作OpenClaw.git
+   git remote add prod-research https://github.com/你的用户名/仓库名.git
    git push -u prod-research main
    ```
-   若仓库名为英文（如 `openclaw-product-research`）：
+   若用 SSH（推荐）：
    ```bash
-   git remote add prod-research https://github.com/你的用户名/openclaw-product-research.git
+   git remote add prod-research git@github.com:你的用户名/仓库名.git
    git push -u prod-research main
    ```
 
@@ -40,7 +40,7 @@ git push -u prod-research main
 
 ```bash
 cd ~/.openclaw
-gh repo create 产研协作OpenClaw --public --source=. --remote=prod-research --description "产研协作多 Agent OpenClaw 配置与四 Agent 流程" --push
+gh repo create 仓库名 --public --source=. --remote=prod-research --description "OpenClaw 多 Agent 产研协作" --push
 ```
 
 ## 若 SSH 报 `Permission denied (publickey)`
@@ -64,7 +64,7 @@ ssh-add ~/.ssh/id_ed25519
 ```bash
 ssh -T git@github.com
 ```
-若成功会提示：`Hi hebi123! You've successfully authenticated...`
+若成功会提示：`Hi 你的用户名! You've successfully authenticated...`
 
 **4. 再推送：**
 ```bash
@@ -73,13 +73,12 @@ git push -u prod-research main
 ```
 
 若本机还没有 SSH 密钥，或 GitHub 上没有添加公钥，需要：
-- 生成密钥：`ssh-keygen -t ed25519 -C "你的邮箱" -f ~/.ssh/id_ed25519`
+- 生成密钥：`ssh-keygen -t ed25519 -C "你的邮箱" -f ~/.ssh/id_ed25519 -N ""`
 - 把 `~/.ssh/id_ed25519.pub` 的内容复制到 GitHub：Settings → SSH and GPG keys → New SSH key
 
 ---
 
 ## 说明
 
-- 当前 `origin` 仍指向你原来的仓库（如 `hebi123/-openclaw`），未做修改。
-- 新仓库只添加为 `prod-research`，推送后可在 GitHub 上看到项目「产研协作OpenClaw」。
-- 敏感文件（`openclaw.json`、`logs/`、`identity/` 等）已由 `.gitignore` 排除，不会推送。
+- 可将 `prod-research` 换成你习惯的远程名；推送后在该远程对应的 GitHub 仓库查看代码。
+- 敏感文件（`openclaw.json`、`logs/`、`identity/` 等）已由 `.gitignore` 排除，不会推送。详见 `PUSH_RULES.md`。
