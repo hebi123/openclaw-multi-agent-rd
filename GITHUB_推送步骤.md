@@ -1,6 +1,6 @@
 # 将本仓库推送到 GitHub
 
-适用于本仓库（OpenClaw 多 Agent 产研协作）推送到 GitHub 的通用步骤。当前推荐远程名为 `prod-research`，仓库示例：`openclaw-multi-agent-rd`。
+适用于本仓库（OpenClaw 多 Agent 产研协作）推送到 GitHub 的通用步骤。当前推荐远程名为 `openclaw-multi-agent-rd`，仓库示例：`openclaw-multi-agent-rd`。
 
 ## 若 HTTPS 连不上（443 超时）
 
@@ -8,10 +8,10 @@
 
 ```bash
 cd ~/.openclaw
-git remote set-url prod-research git@github.com:你的用户名/仓库名.git
+git remote set-url openclaw-multi-agent-rd git@github.com:你的用户名/仓库名.git
 # 示例（仓库名为英文）：
-# git remote set-url prod-research git@github.com:hebi123/openclaw-multi-agent-rd.git
-git push -u prod-research main
+# git remote set-url openclaw-multi-agent-rd git@github.com:hebi123/openclaw-multi-agent-rd.git
+git push -u openclaw-multi-agent-rd main
 ```
 
 ## 方式一：网页创建仓库后推送（推荐）
@@ -25,13 +25,13 @@ git push -u prod-research main
 2. **在本地添加远程并推送**（将 `你的用户名`、`仓库名` 换成实际值）：
    ```bash
    cd ~/.openclaw
-   git remote add prod-research https://github.com/你的用户名/仓库名.git
-   git push -u prod-research main
+   git remote add openclaw-multi-agent-rd https://github.com/你的用户名/仓库名.git
+   git push -u openclaw-multi-agent-rd main
    ```
    若用 SSH（推荐）：
    ```bash
-   git remote add prod-research git@github.com:你的用户名/仓库名.git
-   git push -u prod-research main
+   git remote add openclaw-multi-agent-rd git@github.com:你的用户名/仓库名.git
+   git push -u openclaw-multi-agent-rd main
    ```
 
 ## 方式二：使用 GitHub CLI（需本机可访问 GitHub）
@@ -40,7 +40,7 @@ git push -u prod-research main
 
 ```bash
 cd ~/.openclaw
-gh repo create 仓库名 --public --source=. --remote=prod-research --description "OpenClaw 多 Agent 产研协作" --push
+gh repo create 仓库名 --public --source=. --remote=openclaw-multi-agent-rd --description "OpenClaw 多 Agent 产研协作" --push
 ```
 
 ## 若 SSH 报 `Permission denied (publickey)`
@@ -69,7 +69,7 @@ ssh -T git@github.com
 **4. 再推送：**
 ```bash
 cd ~/.openclaw
-git push -u prod-research main
+git push -u openclaw-multi-agent-rd main
 ```
 
 若本机还没有 SSH 密钥，或 GitHub 上没有添加公钥，需要：
@@ -80,5 +80,5 @@ git push -u prod-research main
 
 ## 说明
 
-- 可将 `prod-research` 换成你习惯的远程名；推送后在该远程对应的 GitHub 仓库查看代码。
+- 可将 `openclaw-multi-agent-rd` 换成你习惯的远程名；推送后在该远程对应的 GitHub 仓库查看代码。
 - 敏感文件（`openclaw.json`、`logs/`、`identity/` 等）已由 `.gitignore` 排除，不会推送。详见 `PUSH_RULES.md`。
